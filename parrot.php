@@ -10,15 +10,14 @@
 
 use \bird;
 
-
-class Parrot extends Bird implements BirdInterface
+class Parrot extends AbstractBird implements FlyableInterface
 {
     private $word;
 
     function __construct($word, $color, $name)
     {
         $this->word = $word;
-        parent::__construct($color,$name);
+        parent::__construct($color, $name);
     }
 
     /**
@@ -31,7 +30,11 @@ class Parrot extends Bird implements BirdInterface
 
     public function voice()
     {
-        return $this->getColor() . " parrot " . $this->getName() . " say: " . $this->getWord();
+        $format = '%s parrot %s say: %s';
+        $color = $this->getColor();
+        $name = $this->getName();
+        $word = $this->getWord();
+        return sprintf($format, $color, $name, $word);
     }
 
     public function fly()

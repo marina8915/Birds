@@ -10,11 +10,14 @@
 
 use \bird;
 
-class Sparrow extends Bird implements BirdInterface
+class Sparrow extends AbstractBird implements FlyableInterface
 {
     public function voice()
     {
-        return $this->getColor() . " sparrow " . $this->getName() . " say: chirik-chirik";
+        $format = '%s sparrow %s say: chirik-chirik';
+        $color = $this->getColor();
+        $name = $this->getName();
+        return sprintf($format, $color, $name);
     }
 
     public function fly()
