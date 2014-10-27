@@ -1,14 +1,12 @@
 <?php
 /**
- * abstract class Bird
+ * abstract class AbstractBird
  *
  * Created by PhpStorm.
  * User: marina
  * Date: 24.10.14
  * Time: 15:05
  */
-
-
 
 abstract class AbstractBird
 {

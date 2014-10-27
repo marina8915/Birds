@@ -8,6 +8,4 @@ spl_autoload_register(function($namespace) {
     } else {
         throw new \Exception(sprintf('Can\'t find file by "%s" namespace', $namespace));
     }
-
-
 });
